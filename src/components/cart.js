@@ -13,7 +13,7 @@ class Cart extends Component {
                 <div className="cart-title">
                     Your Cart
                 </div>
-                <div className="btn cart-title">
+                <div className="cart-title">
                     Cart is empty
                 </div>
             </div>
