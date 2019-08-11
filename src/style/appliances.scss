@@ -1,0 +1,26 @@
+.appliance-background {
+    text-align: center;
+    background-image: url(../../static/assets/appliance-background.jpg);
+    background-size: 100% 100%;
+    //background-attachment: fixed;
+    object-fit: contain;
+    background-position: center;
+    width: 100%;
+    height: auto;
+    animation: 2s 0s title-entrance;
+}
+.appliance-title {
+    margin-top: 10px;
+    //color: black;
+    background-color: orange;
+    opacity: 0.5;
+    font-size: 25px;
+    text-align: center;
+}
+.appliance {
+    background-color: orange;
+    opacity: 0.65;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid black;
+}

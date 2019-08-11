@@ -1,0 +1,37 @@
+.tbl {
+    font-size: 20px;
+}
+.cart-tbl {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.item-details {
+    background-color: white;
+    border: 1px solid black;
+}
+.item-padding {
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid black;
+}
+.add-btn {
+    background-color: lime;
+}
+.remove-btn {
+    color: white;
+    background-color: red;
+}
+.margin10 {
+    margin-bottom: 10px;
+}
+@media screen and (max-width: 800px) {
+    .tbl, .cart-tbl {
+        font-size: 15px;
+    }
+}
+@media screen and (max-height: 500px) {
+    .tbl, .cart-tbl {
+        font-size: 15px;
+    }
+}
