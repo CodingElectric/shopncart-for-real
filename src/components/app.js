@@ -7,10 +7,6 @@ import Appliances from './appliances';
 import Cart from './cart';
 import Footer from './footer';
 
-//this.checkoutReady = this.checkoutReady.bind(this);
-    //this.checkoutComplete = this.checkoutComplete.bind(this);
-    //this.emptyCart = this.emptyCart.bind(this);
-
 export default class App extends Component {
 
   constructor(props) {
@@ -46,12 +42,16 @@ export default class App extends Component {
   }
   addToCart(item) {
     const yourCart = [...this.state.yourCart, item]
+    const dollarAmount = this.state.dollarAmount + item[1]
+    this.setState({dollarAmount})
     this.setState({yourCart})
     this.setState({ cartCount: this.state.cartCount + 1 })
   }
-  removeFromCart(index) {
+  removeFromCart(item, index) {
     const yourCart = [...this.state.yourCart]
     yourCart.splice(index, 1)
+    const dollarAmount = this.state.dollarAmount - item[1]
+    this.setState({dollarAmount})
     this.setState({yourCart})
     this.setState({ cartCount: this.state.cartCount - 1 })
   }
@@ -59,10 +59,15 @@ export default class App extends Component {
     this.setState({ checkoutVisible: true })
   }
   checkoutComplete = () => {
-    this.setState({ checkoutVisible: false, yourCart: [], cartCount: 0 })
+    this.setState({ checkoutVisible: false, 
+                    yourCart: [],
+                    dollarAmount: 0, 
+                    cartCount: 0 })
   }
   emptyCart = () => {
-    this.setState({ yourCart: [], cartCount: 0 })
+    this.setState({ yourCart: [], 
+      dollarAmount: 0,
+      cartCount: 0 })
   }
 
   render() {
@@ -75,8 +80,9 @@ export default class App extends Component {
         'checkout-hidden'}
         onClick={this.checkoutComplete}>
           <div className='checkout-message'>
-          <div>Thank you for your purchase 
-            of {this.state.cartCount} items. Enjoy!</div>
+          <div>Thank you for your purchase  
+            of {this.state.cartCount} items for 
+            ${this.state.dollarAmount.toFixed(2)}. Enjoy!</div>
           <div className='close'>X</div>
           </div>
           </div>

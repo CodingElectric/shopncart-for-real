@@ -25,14 +25,14 @@
     flex-direction: column;
     //justify-content: center;
     align-items: center;
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
     color: royalblue;
     font-weight: bolder;
 }
 @media screen and (max-width: 750px) {
     .cart-title {
-        font-size: 15px;
+        font-size: 18px;
         font-weight: bold;
     }
     .welcome {
@@ -41,7 +41,7 @@
 }
 @media screen and (max-height: 550px) {
     .cart-title {
-        font-size: 15px;
+        font-size: 18px;
         font-weight: bold;
     }
     .welcome {

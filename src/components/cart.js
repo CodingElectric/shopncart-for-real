@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 
-//<div className="cart-title">
-                    //Your Cart
-                //</div>
+//total() {
+    //return this.props.items.reduce((total, item) => {
+        //return total + item[1]
+    //}, 0)
+//}
 
 class Cart extends Component {
-    total() {
-        return this.props.items.reduce((total, item) => {
-            return total + item[1]
-        }, 0)
-    }
     render() {
         if (this.props.items.length === 0) {
             return <div className='main cart cart-image'>
@@ -38,7 +35,7 @@ class Cart extends Component {
                         {item[1].toFixed(2)}</td>
                         <td>
                             <button 
-                                onClick={() => this.props.removeFromCart(index)}
+                                onClick={() => this.props.removeFromCart(item, index)}
                                 className="remove-btn">
                                 Remove from cart
                             </button>
@@ -49,7 +46,7 @@ class Cart extends Component {
             </table>
             <div className="centers cart-title">
             <p>
-                Total: ${this.total().toFixed(2)}
+                Total: ${this.props.dollarAmount.toFixed(2)}
             </p>
             <button 
               onClick={this.props.checkoutReady}
